@@ -67,8 +67,6 @@ def _insert_children_disease_categories_in_tree(url, level, category_list, resul
 def download_and_save_diseases_tree(output='data/'):
     """Stores in a csv a disease tree created recursively from OMS diseases classification"""
     csv_name = 'diseases_tree.csv'
-    if 'CLASSIFIER_DATA_PATH' in os.environ.keys():
-        output = os.environ['CLASSIFIER_DATA_PATH']
     output += csv_name
     tree = _insert_children_disease_categories_in_tree(DISEASES_ROOT_LINK, 0, [], [])
     # Format the tree to csv style
